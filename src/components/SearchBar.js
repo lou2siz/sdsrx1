@@ -51,7 +51,7 @@ const SearchBar = () => {
           display: 'flex',
           alignItems: 'center',
           bgcolor: 'black',
-          border: '1px solid red',
+          border: '1px solid blue',
         }}
       >
         <InputBase
@@ -60,7 +60,7 @@ const SearchBar = () => {
             flex: 1,
             color: 'light blue',
             '&::placeholder': {
-              color: 'red',
+              color: 'light blue',
               opacity: 0.7
             }
           }}

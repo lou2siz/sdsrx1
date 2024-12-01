@@ -15,7 +15,7 @@ const BreakingNews = () => {
       bgcolor: '#FF0000',
       p: 1,
       alignItems: 'center',
-      borderBottom: '2px solid #FFA500'
+      borderBottom: '2px solid #ADD8E6.'
     }}>
       <Grid item>
         <IconButton sx={{ color: 'black', mr: 1 }}>
@@ -38,7 +38,7 @@ const BreakingNews = () => {
                 textShadow: '1px 1px 1px rgba(255,255,255,0.5)',
                 cursor: 'pointer',
                 '&:hover': {
-                  color: '#FFA500'
+                  color: '#ADD8E6'
                 }
               }}
             >
