@@ -19,7 +19,7 @@ const Local = () => {
 
   return (
     <PageLayout 
-      title="Local News"
+      title="Sun Diego Sun Report"
       articles={articles}
       category="general"
     />

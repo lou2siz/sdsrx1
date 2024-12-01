@@ -22,7 +22,7 @@ const Footer = () => {
               About Us
             </Typography>
             <Typography variant="body2" sx={{ color: 'red' }}>
-              Your trusted source for local news and community updates.
+              Sun Diego Sun Report: Your trusted source for local news and community updates.
             </Typography>
           </Grid>
           <Grid item xs={12} sm={4}>
@@ -30,21 +30,21 @@ const Footer = () => {
               Contact
             </Typography>
             <Typography variant="body2" sx={{ color: 'red' }}>
-              Email: contact@localnews.com<br />
-              Phone: (555) 123-4567
+              Email: contact@sandiegosunreport.com<br />
+              Phone: (858) 888-1068
             </Typography>
           </Grid>
           <Grid item xs={12} sm={4}>
             <Typography variant="h6" sx={{ color: 'orange', mb: 2 }}>
               Follow Us
             </Typography>
-            <Link href="#" sx={{ color: 'red', mr: 2 }}>Twitter</Link>
-            <Link href="#" sx={{ color: 'red', mr: 2 }}>Facebook</Link>
-            <Link href="#" sx={{ color: 'red' }}>Instagram</Link>
+            <Link href="https://twitter.com/SanDiegoSunReport" target="_blank" sx={{ color: 'red', mr: 2 }}>Twitter</Link>
+            <Link href="https://facebook.com/SanDiegoSunReport" target="_blank" sx={{ color: 'red', mr: 2 }}>Facebook</Link>
+            <Link href="https://instagram.com/SanDiegoSunReport" target="_blank" sx={{ color: 'red' }}>Instagram</Link>
           </Grid>
         </Grid>
         <Typography variant="body2" sx={{ color: 'red', mt: 3, textAlign: 'center' }}>
-          © {new Date().getFullYear()} Local News. All rights reserved.
+          © {new Date().getFullYear()} Sun Diego Sun Report. All rights reserved.
         </Typography>
       </Container>
     </Box>
