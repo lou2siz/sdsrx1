@@ -39,7 +39,11 @@ const PageLayout = ({ title, articles, category }) => {
           
           <Grid item xs={12} md={8}>
             {articles.map((article, index) => (
-              <ArticleTemplate key={index} article={article} />
+              <ArticleTemplate 
+                key={index} 
+                article={article} 
+                index={index} 
+              />
             ))}
           </Grid>
           

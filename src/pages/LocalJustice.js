@@ -30,7 +30,11 @@ const LocalJustice = () => {
         Local Justice
       </Typography>
       {articles.map((article, index) => (
-        <ArticleTemplate key={index} article={article} />
+        <ArticleTemplate 
+          key={index} 
+          article={article} 
+          index={index}
+        />
       ))}
     </Container>
   );

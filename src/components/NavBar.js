@@ -1,6 +1,6 @@
 // src/components/NavBar.js
 
-import React from 'react';
+import React, { useState } from 'react';
 import {
   AppBar,
   Toolbar,
@@ -16,101 +16,118 @@ import {
   ListItemText,
 } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const NavBar = () => {
+  const [mobileOpen, setMobileOpen] = useState(false);
   const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down('md'));
-
-  const [drawerOpen, setDrawerOpen] = React.useState(false);
+  const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
+  const navigate = useNavigate();
 
   const menuItems = [
-    { text: 'Local', link: '/' },
-    { text: 'Local Art', link: '/local-art' },
-    { text: 'Local Politics', link: '/local-politics' },
-    { text: 'Local Business', link: '/local-business' },
-    { text: 'Local Justice', link: '/local-justice' },
-    { text: 'Local Events', link: '/local-events' },
+    { text: 'Home', path: '/' },
+    { text: 'Art', path: '/local-art' },
+    { text: 'Politics', path: '/local-politics' },
+    { text: 'Business', path: '/local-business' },
+    { text: 'Justice', path: '/local-justice' },
+    { text: 'Events', path: '/local-events' },
   ];
 
-  const toggleDrawer = (open) => () => {
-    setDrawerOpen(open);
+  const handleDrawerToggle = () => {
+    setMobileOpen(!mobileOpen);
   };
 
-  return (
-    <AppBar position="sticky" elevation={2} color="primary">
-      <Toolbar>
-        <Box
-          component={Link}
-          to="/"
-          sx={{
-            display: 'flex',
-            alignItems: 'center',
-            textDecoration: 'none',
-            color: 'inherit',
-            flexGrow: 1,
+  const drawer = (
+    <List>
+      {menuItems.map((item) => (
+        <ListItem 
+          button 
+          key={item.text} 
+          onClick={() => {
+            navigate(item.path);
+            handleDrawerToggle();
           }}
         >
-          <Box
-            component="img"
-            src="/logox1.jpg"
-            alt="Logo"
-            sx={{ height: 50, marginRight: 2 }}
+          <ListItemText 
+            primary={item.text} 
+            sx={{ 
+              color: 'red',
+              '& .MuiTypography-root': { color: 'red' }
+            }}
           />
-          <Typography variant="h6" noWrap>
-            Your Site Name
-          </Typography>
-        </Box>
-        {isMobile ? (
-          <>
-            <IconButton
-              color="inherit"
-              aria-label="open drawer"
-              edge="end"
-              onClick={toggleDrawer(true)}
-            >
-              <MenuIcon />
-            </IconButton>
-            <Drawer
-              anchor="right"
-              open={drawerOpen}
-              onClose={toggleDrawer(false)}
-            >
-              <Box
-                sx={{ width: 250 }}
-                role="presentation"
-                onClick={toggleDrawer(false)}
-                onKeyDown={toggleDrawer(false)}
+        </ListItem>
+      ))}
+    </List>
+  );
+
+  return (
+    <AppBar position="sticky" sx={{ bgcolor: 'black', borderBottom: '1px solid red' }}>
+      <Toolbar>
+        {isMobile && (
+          <IconButton
+            color="inherit"
+            aria-label="open drawer"
+            edge="start"
+            onClick={handleDrawerToggle}
+            sx={{ mr: 2, color: 'red' }}
+          >
+            <MenuIcon />
+          </IconButton>
+        )}
+        
+        <Typography 
+          variant="h6" 
+          component={Link} 
+          to="/"
+          sx={{ 
+            flexGrow: 1,
+            color: 'orange',
+            textDecoration: 'none',
+            fontFamily: 'Space Grotesk',
+            fontWeight: 700
+          }}
+        >
+          San Diego Sun Report
+        </Typography>
+
+        {!isMobile && (
+          <Box>
+            {menuItems.map((item) => (
+              <Button
+                key={item.text}
+                component={Link}
+                to={item.path}
+                sx={{ 
+                  color: 'red',
+                  '&:hover': { color: 'orange' }
+                }}
               >
-                <List>
-                  {menuItems.map((item) => (
-                    <ListItem
-                      button
-                      key={item.text}
-                      component={Link}
-                      to={item.link}
-                    >
-                      <ListItemText primary={item.text} />
-                    </ListItem>
-                  ))}
-                </List>
-              </Box>
-            </Drawer>
-          </>
-        ) : (
-          menuItems.map((item) => (
-            <Button
-              key={item.text}
-              color="inherit"
-              component={Link}
-              to={item.link}
-              sx={{ marginLeft: 1 }}
-            >
-              {item.text}
-            </Button>
-          ))
+                {item.text}
+              </Button>
+            ))}
+          </Box>
         )}
       </Toolbar>
+
+      <Drawer
+        variant="temporary"
+        anchor="left"
+        open={mobileOpen}
+        onClose={handleDrawerToggle}
+        ModalProps={{
+          keepMounted: true, // Better mobile performance
+        }}
+        sx={{
+          '& .MuiDrawer-paper': { 
+            boxSizing: 'border-box', 
+            width: 240,
+            bgcolor: 'black',
+            borderRight: '1px solid red'
+          },
+        }}
+      >
+        {drawer}
+      </Drawer>
     </AppBar>
   );
 };

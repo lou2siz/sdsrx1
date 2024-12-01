@@ -20,7 +20,10 @@ const Local = () => {
   return (
     <PageLayout 
       title="Sun Diego Sun Report"
-      articles={articles}
+      articles={articles.map((article, index) => ({
+        ...article,
+        index
+      }))}
       category="general"
     />
   );

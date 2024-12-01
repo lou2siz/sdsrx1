@@ -30,7 +30,7 @@ const LocalPolitics = () => {
         Local Politics
       </Typography>
       {articles.map((article, index) => (
-        <ArticleTemplate key={index} article={article} />
+        <ArticleTemplate key={index} article={article} index={index} />
       ))}
     </Container>
   );

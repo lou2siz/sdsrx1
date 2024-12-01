@@ -1,13 +1,14 @@
 // src/components/ArticleTemplate.js
 
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { 
   Typography, 
   Card, 
   CardContent,
   IconButton,
   Collapse,
-  Box,
+  Stack,
   Chip
 } from '@mui/material';
 import ShareIcon from '@mui/icons-material/Share';
@@ -22,12 +23,14 @@ const getReadingTime = (content) => {
   return `${minutes} min read`;
 };
 
-const ArticleTemplate = ({ article }) => {
+const ArticleTemplate = ({ article, index }) => {
   const [expanded, setExpanded] = useState(false);
   const [likes, setLikes] = useState(0);
   const [saved, setSaved] = useState(false);
+  const navigate = useNavigate();
 
-  const handleShare = () => {
+  const handleShare = (e) => {
+    e.stopPropagation();
     if (navigator.share) {
       navigator.share({
         title: article.title,
@@ -37,13 +40,34 @@ const ArticleTemplate = ({ article }) => {
     }
   };
 
+  const handleLike = (e) => {
+    e.stopPropagation();
+    setLikes(likes + 1);
+  };
+
+  const handleSave = (e) => {
+    e.stopPropagation();
+    setSaved(!saved);
+  };
+
+  const handleExpand = (e) => {
+    e.stopPropagation();
+    setExpanded(!expanded);
+  };
+
   return (
-    <Card sx={{ 
-      marginBottom: 4,
-      backgroundColor: 'black',
-      border: '1px solid red',
-      '&:hover': { border: '1px solid orange' }
-    }}>
+    <Card 
+      sx={{ 
+        marginBottom: 4,
+        backgroundColor: 'black',
+        border: '1px solid red',
+        '&:hover': { 
+          border: '1px solid orange',
+          cursor: 'pointer'
+        }
+      }}
+      onClick={() => navigate(`/article/${index}`)}
+    >
       <CardContent>
         <Typography variant="h5" gutterBottom sx={{ color: 'orange' }}>
           {article.title}
@@ -64,23 +88,28 @@ const ArticleTemplate = ({ article }) => {
           <Typography variant="body1">{article.content}</Typography>
         </Collapse>
         
-        <Box sx={{ display: 'flex', justifyContent: 'space-between', mt: 2 }}>
-          <Box>
-            <IconButton onClick={() => setLikes(likes + 1)}>
+        <Stack 
+          direction="row" 
+          justifyContent="space-between" 
+          alignItems="center"
+          sx={{ mt: 2 }}
+        >
+          <Stack direction="row" alignItems="center">
+            <IconButton onClick={handleLike}>
               <ThumbUpIcon sx={{ color: 'red' }} />
             </IconButton>
             <Chip label={likes} size="small" sx={{ bgcolor: 'black', color: 'red' }} />
             
-            <IconButton onClick={() => setSaved(!saved)}>
+            <IconButton onClick={handleSave}>
               <BookmarkIcon sx={{ color: saved ? 'orange' : 'red' }} />
             </IconButton>
             
             <IconButton onClick={handleShare}>
               <ShareIcon sx={{ color: 'red' }} />
             </IconButton>
-          </Box>
+          </Stack>
           
-          <IconButton onClick={() => setExpanded(!expanded)}>
+          <IconButton onClick={handleExpand}>
             <ExpandMoreIcon 
               sx={{ 
                 color: 'red',
@@ -89,7 +118,7 @@ const ArticleTemplate = ({ article }) => {
               }} 
             />
           </IconButton>
-        </Box>
+        </Stack>
       </CardContent>
     </Card>
   );

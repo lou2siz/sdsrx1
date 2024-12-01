@@ -13,6 +13,7 @@ import LocalEvents from './pages/LocalEvents';
 import { Box } from '@mui/material';
 import { ArticleProvider } from './context/ArticleContext';
 import ReadingProgress from './components/ReadingProgress';
+import ArticleDetail from './pages/ArticleDetail';
 
 const App = () => {
   return (
@@ -36,6 +37,7 @@ const App = () => {
               <Route path="/local-business" element={<LocalBusiness />} />
               <Route path="/local-justice" element={<LocalJustice />} />
               <Route path="/local-events" element={<LocalEvents />} />
+              <Route path="/article/:id" element={<ArticleDetail />} />
             </Routes>
           </Box>
           <Footer />
