@@ -9,6 +9,7 @@ import {
   Alert
 } from '@mui/material';
 import MailOutlineIcon from '@mui/icons-material/MailOutline';
+import '@fontsource/space-grotesk/700.css';
 
 const NewsletterSignup = () => {
   const [email, setEmail] = useState('');
