@@ -1,8 +1,7 @@
 // src/pages/Local.js
 
 import React from 'react';
-import { Container, Typography, Box } from '@mui/material';
-import ArticleTemplate from '../components/ArticleTemplate';
+import PageLayout from '../components/PageLayout';
 
 const Local = () => {
   const articles = [
@@ -20,20 +19,7 @@ const Local = () => {
     },
   ];
 
-  return (
-    <Container maxWidth="md" sx={{ marginTop: 4 }}>
-      {/* Logo at the top */}
-      <Box sx={{ display: 'flex', justifyContent: 'center', marginBottom: 2 }}>
-        <Box component="img" src="/logox1.jpg" alt="Logo" sx={{ height: 80 }} />
-      </Box>
-      <Typography variant="h4" gutterBottom>
-        Local News
-      </Typography>
-      {articles.map((article, index) => (
-        <ArticleTemplate key={index} article={article} />
-      ))}
-    </Container>
-  );
+  return <PageLayout title="Local News" articles={articles} category="local" />;
 };
 
 export default Local;

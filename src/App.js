@@ -11,31 +11,37 @@ import LocalBusiness from './pages/LocalBusiness';
 import LocalJustice from './pages/LocalJustice';
 import LocalEvents from './pages/LocalEvents';
 import { Box } from '@mui/material';
+import { ArticleProvider } from './context/ArticleContext';
+import ReadingProgress from './components/ReadingProgress';
 
 const App = () => {
   return (
-    <Router>
-      <Box
-        sx={{
-          display: 'flex',
-          flexDirection: 'column',
-          minHeight: '100vh',
-        }}
-      >
-        <NavBar />
-        <Box sx={{ flexGrow: 1 }}>
-          <Routes>
-            <Route path="/" element={<Local />} />
-            <Route path="/local-art" element={<LocalArt />} />
-            <Route path="/local-politics" element={<LocalPolitics />} />
-            <Route path="/local-business" element={<LocalBusiness />} />
-            <Route path="/local-justice" element={<LocalJustice />} />
-            <Route path="/local-events" element={<LocalEvents />} />
-          </Routes>
+    <ArticleProvider>
+      <Router>
+        <ReadingProgress />
+        <Box
+          sx={{
+            display: 'flex',
+            flexDirection: 'column',
+            minHeight: '100vh',
+            backgroundColor: 'black'
+          }}
+        >
+          <NavBar />
+          <Box sx={{ flexGrow: 1 }}>
+            <Routes>
+              <Route path="/" element={<Local />} />
+              <Route path="/local-art" element={<LocalArt />} />
+              <Route path="/local-politics" element={<LocalPolitics />} />
+              <Route path="/local-business" element={<LocalBusiness />} />
+              <Route path="/local-justice" element={<LocalJustice />} />
+              <Route path="/local-events" element={<LocalEvents />} />
+            </Routes>
+          </Box>
+          <Footer />
         </Box>
-        <Footer />
-      </Box>
-    </Router>
+      </Router>
+    </ArticleProvider>
   );
 };
 
