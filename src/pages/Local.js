@@ -19,7 +19,7 @@ const Local = () => {
 
   return (
     <PageLayout 
-      title="Sun Diego Sun Report"
+      title="San Francisco Freedom Times"
       articles={articles.map((article, index) => ({
         ...article,
         index
