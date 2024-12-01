@@ -12,7 +12,7 @@ const Footer = () => {
         px: 2,
         mt: 'auto',
         backgroundColor: 'black',
-        borderTop: '1px solid red'
+        borderTop: '1px solid lightblue'
       }}
     >
       <Container maxWidth="lg">
@@ -21,16 +21,16 @@ const Footer = () => {
             <Typography variant="h6" sx={{ color: 'orange', mb: 2 }}>
               About Us
             </Typography>
-            <Typography variant="body2" sx={{ color: 'red' }}>
-              Sun Diego Sun Report: Your trusted source for local news and community updates.
+            <Typography variant="body2" sx={{ color: 'lightblue' }}>
+              San Francisco Freedom Times: Your trusted source for local news and community updates.
             </Typography>
           </Grid>
           <Grid item xs={12} sm={4}>
             <Typography variant="h6" sx={{ color: 'orange', mb: 2 }}>
               Contact
             </Typography>
-            <Typography variant="body2" sx={{ color: 'red' }}>
-              Email: contact@sandiegosunreport.com<br />
+            <Typography variant="body2" sx={{ color: 'lightblue' }}>
+              Email: contact@sanfranciscofreedomtimes.com<br />
               Phone: (858) 888-1068
             </Typography>
           </Grid>
@@ -38,13 +38,13 @@ const Footer = () => {
             <Typography variant="h6" sx={{ color: 'orange', mb: 2 }}>
               Follow Us
             </Typography>
-            <Link href="https://twitter.com/SanDiegoSunReport" target="_blank" sx={{ color: 'red', mr: 2 }}>Twitter</Link>
-            <Link href="https://facebook.com/SanDiegoSunReport" target="_blank" sx={{ color: 'red', mr: 2 }}>Facebook</Link>
-            <Link href="https://instagram.com/SanDiegoSunReport" target="_blank" sx={{ color: 'red' }}>Instagram</Link>
+            <Link href="https://twitter.com/SFFreedomTimes" target="_blank" sx={{ color: 'lightblue', mr: 2 }}>Twitter</Link>
+            <Link href="https://facebook.com/SFFreedomTimes" target="_blank" sx={{ color: 'lightblue', mr: 2 }}>Facebook</Link>
+            <Link href="https://instagram.com/SFFreedomTimes" target="_blank" sx={{ color: 'lightblue' }}>Instagram</Link>
           </Grid>
         </Grid>
-        <Typography variant="body2" sx={{ color: 'red', mt: 3, textAlign: 'center' }}>
-          © {new Date().getFullYear()} Sun Diego Sun Report. All rights reserved.
+        <Typography variant="body2" sx={{ color: 'lightblue', mt: 3, textAlign: 'center' }}>
+          © {new Date().getFullYear()} San Francisco Freedom Times. All rights reserved.
         </Typography>
       </Container>
     </Box>

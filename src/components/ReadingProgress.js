@@ -29,7 +29,7 @@ const ReadingProgress = () => {
         height: 3,
         backgroundColor: 'black',
         '& .MuiLinearProgress-bar': {
-          backgroundColor: 'red',
+          backgroundColor: 'lightblue',
         }
       }}
     />

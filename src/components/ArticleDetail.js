@@ -24,7 +24,7 @@ const ArticleDetail = () => {
         <Button 
           startIcon={<ArrowBackIcon />}
           onClick={() => navigate(-1)}
-          sx={{ mt: 2, color: 'red' }}
+          sx={{ mt: 2, color: 'lightblue' }}
         >
           Go Back
         </Button>
@@ -37,7 +37,7 @@ const ArticleDetail = () => {
       <Button 
         startIcon={<ArrowBackIcon />}
         onClick={() => navigate(-1)}
-        sx={{ mb: 2, color: 'red' }}
+        sx={{ mb: 2, color: 'lightblue' }}
       >
         Go Back
       </Button>
@@ -45,10 +45,10 @@ const ArticleDetail = () => {
       <Paper sx={{ 
         p: 3, 
         bgcolor: 'black',
-        border: '1px solid red',
+        border: '1px solid lightblue',
         borderRadius: 2
       }}>
-        <Typography variant="h4" gutterBottom sx={{ color: 'orange' }}>
+        <Typography variant="h4" gutterBottom sx={{ color: 'gold' }}>
           {article.title}
         </Typography>
         

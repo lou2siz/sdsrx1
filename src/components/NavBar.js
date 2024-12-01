@@ -51,8 +51,8 @@ const NavBar = () => {
           <ListItemText 
             primary={item.text} 
             sx={{ 
-              color: 'red',
-              '& .MuiTypography-root': { color: 'red' }
+              color: 'blue',
+              '& .MuiTypography-root': { color: 'blue' }
             }}
           />
         </ListItem>
@@ -61,7 +61,7 @@ const NavBar = () => {
   );
 
   return (
-    <AppBar position="sticky" sx={{ bgcolor: 'black', borderBottom: '1px solid red' }}>
+    <AppBar position="sticky" sx={{ bgcolor: 'black', borderBottom: '1px solid blue' }}>
       <Toolbar>
         {isMobile && (
           <IconButton
@@ -69,7 +69,7 @@ const NavBar = () => {
             aria-label="open drawer"
             edge="start"
             onClick={handleDrawerToggle}
-            sx={{ mr: 2, color: 'red' }}
+            sx={{ mr: 2, color: 'blue' }}
           >
             <MenuIcon />
           </IconButton>
@@ -81,13 +81,13 @@ const NavBar = () => {
           to="/"
           sx={{ 
             flexGrow: 1,
-            color: 'orange',
+            color: 'yellow',
             textDecoration: 'none',
             fontFamily: 'Space Grotesk',
             fontWeight: 700
           }}
         >
-          San Diego Sun Report
+          San Francisco Freedom Times
         </Typography>
 
         {!isMobile && (
@@ -98,8 +98,8 @@ const NavBar = () => {
                 component={Link}
                 to={item.path}
                 sx={{ 
-                  color: 'red',
-                  '&:hover': { color: 'orange' }
+                  color: 'blue',
+                  '&:hover': { color: 'yellow' }
                 }}
               >
                 {item.text}
@@ -122,7 +122,7 @@ const NavBar = () => {
             boxSizing: 'border-box', 
             width: 240,
             bgcolor: 'black',
-            borderRight: '1px solid red'
+            borderRight: '1px solid lightblue'
           },
         }}
       >

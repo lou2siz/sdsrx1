@@ -12,15 +12,15 @@ const theme = createTheme({
       main: '#000000',
     },
     secondary: {
-      main: '#ff0000',
+      main: '#87CEEB',
     },
     background: {
       default: '#000000',
       paper: '#000000',
     },
     text: {
-      primary: '#ff0000',
-      secondary: '#ff0000',
+      primary: '#87CEEB',
+      secondary: '#87CEEB',
     },
   },
   typography: {
@@ -28,49 +28,49 @@ const theme = createTheme({
     h1: {
       fontWeight: 700,
       letterSpacing: '-0.02em',
-      color: '#FFA500',
+      color: '#FFD700',
       textShadow: '1px 1px 2px #ffffff',
     },
     h2: {
       fontWeight: 700,
       letterSpacing: '-0.01em',
-      color: '#FFA500',
+      color: '#FFD700',
       textShadow: '1px 1px 2px #ffffff',
     },
     h3: {
       fontWeight: 600,
-      color: '#FFA500',
+      color: '#FFD700',
       textShadow: '1px 1px 2px #ffffff',
     },
     h4: {
       fontWeight: 600,
-      color: '#FFA500',
+      color: '#FFD700',
       textShadow: '1px 1px 2px #ffffff',
     },
     h5: {
       fontWeight: 500,
-      color: '#FFA500',
+      color: '#FFD700',
       textShadow: '1px 1px 2px #ffffff',
     },
     h6: {
       fontWeight: 500,
-      color: '#FFA500',
+      color: '#FFD700',
       textShadow: '1px 1px 2px #ffffff',
     },
     body1: {
       fontWeight: 400,
       lineHeight: 1.7,
-      color: '#ff0000',
+      color: '#87CEEB',
       textShadow: '1px 1px 1px #ffffff',
     },
     body2: {
       fontWeight: 400,
       lineHeight: 1.7,
-      color: '#ff0000',
+      color: '#87CEEB',
       textShadow: '1px 1px 1px #ffffff',
     },
     caption: {
-      color: '#ff0000',
+      color: '#87CEEB',
       textShadow: '1px 1px 1px #ffffff',
     },
   },

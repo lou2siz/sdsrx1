@@ -26,11 +26,11 @@ const QuickNav = () => {
       sx={{ 
         p: 2, 
         bgcolor: 'transparent',
-        border: '1px solid red',
+        border: '1px solid lightblue',
         mb: 3
       }}
     >
-      <Typography variant="subtitle2" sx={{ color: 'orange', mb: 1 }}>
+      <Typography variant="subtitle2" sx={{ color: 'gold', mb: 1 }}>
         Quick Navigation
       </Typography>
       <Stack direction="row" spacing={1} sx={{ flexWrap: 'wrap', gap: 1 }}>

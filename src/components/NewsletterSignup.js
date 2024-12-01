@@ -41,13 +41,13 @@ const NewsletterSignup = () => {
   return (
     <Card sx={{ 
       bgcolor: 'black',
-      border: '1px solid red',
+      border: '1px solid lightblue',
       borderRadius: 2,
       mb: 2
     }}>
       <CardContent>
         <Typography variant="h6" sx={{ 
-          color: 'orange',
+          color: 'gold',
           display: 'flex',
           alignItems: 'center',
           gap: 1,
@@ -56,7 +56,7 @@ const NewsletterSignup = () => {
           <MailOutlineIcon /> Newsletter Signup
         </Typography>
         
-        <Typography variant="body2" sx={{ color: 'red', mb: 2 }}>
+        <Typography variant="body2" sx={{ color: 'lightblue', mb: 2 }}>
           Stay updated with our latest local news and stories!
         </Typography>
 
@@ -70,15 +70,15 @@ const NewsletterSignup = () => {
             sx={{
               mb: 2,
               '& .MuiOutlinedInput-root': {
-                color: 'red',
+                color: 'lightblue',
                 '& fieldset': {
-                  borderColor: 'red',
+                  borderColor: 'lightblue',
                 },
                 '&:hover fieldset': {
-                  borderColor: 'orange',
+                  borderColor: 'gold',
                 },
                 '&.Mui-focused fieldset': {
-                  borderColor: 'orange',
+                  borderColor: 'gold',
                 },
               },
             }}
@@ -89,11 +89,11 @@ const NewsletterSignup = () => {
             fullWidth
             variant="outlined"
             sx={{
-              color: 'red',
-              borderColor: 'red',
+              color: 'lightblue',
+              borderColor: 'lightblue',
               '&:hover': {
-                borderColor: 'orange',
-                color: 'orange',
+                borderColor: 'gold',
+                color: 'gold',
               },
             }}
           >
@@ -107,8 +107,8 @@ const NewsletterSignup = () => {
             sx={{ 
               mt: 2,
               bgcolor: 'transparent',
-              color: 'red',
-              border: '1px solid red'
+              color: 'lightblue',
+              border: '1px solid lightblue'
             }}
           >
             {error}
@@ -121,8 +121,8 @@ const NewsletterSignup = () => {
             sx={{ 
               mt: 2,
               bgcolor: 'transparent',
-              color: 'orange',
-              border: '1px solid orange'
+              color: 'gold',
+              border: '1px solid gold'
             }}
           >
             Thank you for subscribing!

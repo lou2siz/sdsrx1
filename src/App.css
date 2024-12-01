@@ -1,7 +1,7 @@
 .App {
   text-align: center;
   background-color: black;
-  color: red;
+  color: rgb(20, 247, 251);
 }
 
 .App-logo {
@@ -23,11 +23,11 @@
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: red;
+  color: rgb(39, 180, 223);
 }
 
 .App-link {
-  color: red;
+  color: rgb(23, 223, 237);
 }
 
 @keyframes App-logo-spin {
@@ -46,7 +46,7 @@ body {
 
 /* Style for all text elements */
 p, h1, h2, h3, h4, h5, h6, span, div {
-  color: red !important;
+  color: rgb(16, 181, 241) !important;
   text-shadow: 1px 1px 1px #ffffff !important;
 }
 

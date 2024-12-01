@@ -60,16 +60,16 @@ const ArticleTemplate = ({ article, index }) => {
       sx={{ 
         marginBottom: 4,
         backgroundColor: 'black',
-        border: '1px solid red',
+        border: '1px solid lightblue',
         '&:hover': { 
-          border: '1px solid orange',
+          border: '1px solid gold',
           cursor: 'pointer'
         }
       }}
       onClick={() => navigate(`/article/${index}`)}
     >
       <CardContent>
-        <Typography variant="h5" gutterBottom sx={{ color: 'orange' }}>
+        <Typography variant="h5" gutterBottom sx={{ color: 'gold' }}>
           {article.title}
         </Typography>
         <Typography variant="caption" display="block" gutterBottom>
@@ -78,7 +78,7 @@ const ArticleTemplate = ({ article, index }) => {
         <Typography 
           variant="caption" 
           sx={{ 
-            color: 'orange',
+            color: 'gold',
             ml: 2 
           }}
         >
@@ -96,23 +96,23 @@ const ArticleTemplate = ({ article, index }) => {
         >
           <Stack direction="row" alignItems="center">
             <IconButton onClick={handleLike}>
-              <ThumbUpIcon sx={{ color: 'red' }} />
+              <ThumbUpIcon sx={{ color: 'lightblue' }} />
             </IconButton>
-            <Chip label={likes} size="small" sx={{ bgcolor: 'black', color: 'red' }} />
+            <Chip label={likes} size="small" sx={{ bgcolor: 'black', color: 'lightblue' }} />
             
             <IconButton onClick={handleSave}>
-              <BookmarkIcon sx={{ color: saved ? 'orange' : 'red' }} />
+              <BookmarkIcon sx={{ color: saved ? 'gold' : 'lightblue' }} />
             </IconButton>
             
             <IconButton onClick={handleShare}>
-              <ShareIcon sx={{ color: 'red' }} />
+              <ShareIcon sx={{ color: 'lightblue' }} />
             </IconButton>
           </Stack>
           
           <IconButton onClick={handleExpand}>
             <ExpandMoreIcon 
               sx={{ 
-                color: 'red',
+                color: 'lightblue',
                 transform: expanded ? 'rotate(180deg)' : 'rotate(0deg)',
                 transition: '0.3s'
               }} 

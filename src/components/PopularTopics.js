@@ -39,13 +39,13 @@ const PopularTopics = () => {
   return (
     <Card sx={{ 
       bgcolor: 'black',
-      border: '1px solid red',
+      border: '1px solid lightblue',
       borderRadius: 2,
       mb: 2
     }}>
       <CardContent>
         <Typography variant="h6" sx={{ 
-          color: 'orange',
+          color: 'gold',
           display: 'flex',
           alignItems: 'center',
           gap: 1,
@@ -67,14 +67,14 @@ const PopularTopics = () => {
               }}
             >
               <ListItemIcon>
-                <TrendingUpIcon sx={{ color: 'red' }} />
+                <TrendingUpIcon sx={{ color: 'lightblue' }} />
               </ListItemIcon>
               <ListItemText 
                 primary={topic.title}
                 secondary={`${topic.views} views`}
                 sx={{
-                  '& .MuiListItemText-primary': { color: 'red' },
-                  '& .MuiListItemText-secondary': { color: 'orange' }
+                  '& .MuiListItemText-primary': { color: 'lightblue' },
+                  '& .MuiListItemText-secondary': { color: 'gold' }
                 }}
               />
             </ListItem>
