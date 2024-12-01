@@ -10,14 +10,31 @@ import {
 } from '@mui/material';
 import TrendingUpIcon from '@mui/icons-material/TrendingUp';
 import WhatshotIcon from '@mui/icons-material/Whatshot';
+import { useNavigate } from 'react-router-dom';
+import { useArticles } from '../context/ArticleContext';
 
 const PopularTopics = () => {
+  const navigate = useNavigate();
+  const { allArticles } = useArticles();
+  
   const topics = [
-    { title: 'City Development', views: '2.5K' },
-    { title: 'Local Sports', views: '2.1K' },
-    { title: 'Education', views: '1.8K' },
-    { title: 'Community Events', views: '1.5K' },
+    { title: 'City Development', views: '2.5K', index: 0 },
+    { title: 'Local Sports', views: '2.1K', index: 1 },
+    { title: 'Education', views: '1.8K', index: 2 },
+    { title: 'Community Events', views: '1.5K', index: 3 },
   ];
+
+  const handleTopicClick = (index) => {
+    // Find the corresponding article in allArticles
+    const article = allArticles.find(article => 
+      article.title.toLowerCase().includes(topics[index].title.toLowerCase())
+    );
+    
+    if (article) {
+      const articleIndex = allArticles.indexOf(article);
+      navigate(`/article/${articleIndex}`);
+    }
+  };
 
   return (
     <Card sx={{ 
@@ -38,12 +55,17 @@ const PopularTopics = () => {
         </Typography>
         <List>
           {topics.map((topic, index) => (
-            <ListItem key={index} sx={{ 
-              '&:hover': { 
-                bgcolor: 'rgba(255,165,0,0.1)',
-                cursor: 'pointer'
-              }
-            }}>
+            <ListItem 
+              key={index} 
+              button
+              onClick={() => handleTopicClick(index)}
+              sx={{ 
+                '&:hover': { 
+                  bgcolor: 'rgba(255,165,0,0.1)',
+                  cursor: 'pointer'
+                }
+              }}
+            >
               <ListItemIcon>
                 <TrendingUpIcon sx={{ color: 'red' }} />
               </ListItemIcon>

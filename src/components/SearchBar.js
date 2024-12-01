@@ -11,29 +11,39 @@ import {
 } from '@mui/material';
 import SearchIcon from '@mui/icons-material/Search';
 import { useArticles } from '../context/ArticleContext';
+import { useNavigate } from 'react-router-dom';
 
 const SearchBar = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [searchResults, setSearchResults] = useState([]);
   const { allArticles } = useArticles();
+  const navigate = useNavigate();
 
   const handleSearch = (event) => {
     const term = event.target.value.toLowerCase();
     setSearchTerm(term);
 
-    if (term.length > 2) {
-      const results = allArticles.filter(article => 
-        article.title.toLowerCase().includes(term) || 
-        article.content.toLowerCase().includes(term)
-      );
-      setSearchResults(results);
-    } else {
+    if (term.trim() === '') {
       setSearchResults([]);
+      return;
     }
+
+    const results = allArticles.filter(article =>
+      article.title.toLowerCase().includes(term) ||
+      article.content.toLowerCase().includes(term)
+    );
+
+    setSearchResults(results);
+  };
+
+  const handleArticleClick = (index) => {
+    setSearchTerm('');
+    setSearchResults([]);
+    navigate(`/article/${index}`);
   };
 
   return (
-    <Box sx={{ mb: 3 }}>
+    <Box sx={{ position: 'relative', width: '100%', mb: 2 }}>
       <Paper
         component="form"
         sx={{
@@ -42,7 +52,6 @@ const SearchBar = () => {
           alignItems: 'center',
           bgcolor: 'black',
           border: '1px solid red',
-          '&:hover': { border: '1px solid orange' }
         }}
       >
         <InputBase
@@ -50,7 +59,10 @@ const SearchBar = () => {
             ml: 1, 
             flex: 1,
             color: 'red',
-            '&::placeholder': { color: 'rgba(255,0,0,0.7)' }
+            '&::placeholder': {
+              color: 'red',
+              opacity: 0.7
+            }
           }}
           placeholder="Search local news..."
           value={searchTerm}
@@ -62,34 +74,42 @@ const SearchBar = () => {
       </Paper>
 
       {searchResults.length > 0 && (
-        <Paper sx={{ 
-          mt: 1, 
-          maxHeight: 300, 
-          overflow: 'auto',
-          bgcolor: 'black',
-          border: '1px solid red'
-        }}>
+        <Paper
+          sx={{
+            position: 'absolute',
+            top: '100%',
+            left: 0,
+            right: 0,
+            zIndex: 1000,
+            mt: 1,
+            bgcolor: 'black',
+            border: '1px solid red',
+            maxHeight: '300px',
+            overflow: 'auto'
+          }}
+        >
           <List>
             {searchResults.map((result, index) => (
               <React.Fragment key={index}>
                 <ListItem 
-                  button
-                  sx={{ 
-                    '&:hover': { bgcolor: 'rgba(255,165,0,0.1)' }
+                  button 
+                  onClick={() => handleArticleClick(index)}
+                  sx={{
+                    '&:hover': {
+                      bgcolor: 'rgba(255,165,0,0.1)'
+                    }
                   }}
                 >
                   <ListItemText 
                     primary={result.title}
-                    secondary={result.content.substring(0, 100) + '...'}
+                    secondary={result.date}
                     sx={{
-                      '& .MuiListItemText-primary': { color: 'orange' },
-                      '& .MuiListItemText-secondary': { color: 'red' }
+                      '& .MuiListItemText-primary': { color: 'red' },
+                      '& .MuiListItemText-secondary': { color: 'orange' }
                     }}
                   />
                 </ListItem>
-                {index < searchResults.length - 1 && (
-                  <Divider sx={{ borderColor: 'rgba(255,0,0,0.3)' }} />
-                )}
+                {index < searchResults.length - 1 && <Divider sx={{ bgcolor: 'red' }} />}
               </React.Fragment>
             ))}
           </List>
