@@ -5,7 +5,6 @@ import {
   Typography,
   TextField,
   Button,
-  Box,
   Snackbar,
   Alert
 } from '@mui/material';
@@ -25,8 +24,7 @@ const NewsletterSignup = () => {
     <Card sx={{ 
       bgcolor: 'black',
       border: '1px solid red',
-      borderRadius: 2,
-      mb: 2
+      borderRadius: 2
     }}>
       <CardContent>
         <Typography variant="h6" sx={{ 
@@ -36,16 +34,17 @@ const NewsletterSignup = () => {
           gap: 1,
           mb: 2
         }}>
-          <MailOutlineIcon /> Stay Updated
+          <MailOutlineIcon /> Newsletter
         </Typography>
-        <Box component="form" onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit}>
           <TextField
             fullWidth
-            type="email"
+            variant="outlined"
             placeholder="Enter your email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             sx={{
+              mb: 2,
               '& .MuiOutlinedInput-root': {
                 color: 'red',
                 '& fieldset': {
@@ -54,26 +53,25 @@ const NewsletterSignup = () => {
                 '&:hover fieldset': {
                   borderColor: 'orange',
                 },
-              },
+              }
             }}
           />
           <Button 
             type="submit"
             variant="outlined"
             fullWidth
-            sx={{ 
-              mt: 2,
-              borderColor: 'red',
+            sx={{
               color: 'red',
+              borderColor: 'red',
               '&:hover': {
                 borderColor: 'orange',
-                color: 'orange',
+                color: 'orange'
               }
             }}
           >
             Subscribe
           </Button>
-        </Box>
+        </form>
       </CardContent>
       <Snackbar
         open={open}

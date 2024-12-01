@@ -6,20 +6,24 @@ import PageLayout from '../components/PageLayout';
 const Local = () => {
   const articles = [
     {
-      title: 'Community Garden Flourishes',
-      content:
-        'The new community garden has become a hub for local residents...',
-      date: '2023-10-03',
+      title: 'Community Center Renovation Complete',
+      content: 'After months of work, the newly renovated community center opens its doors...',
+      date: '2023-10-15',
     },
     {
-      title: 'Local School Wins Award',
-      content:
-        'Congratulations to the students and staff for their outstanding achievements...',
-      date: '2023-10-07',
-    },
+      title: 'Local Heroes Recognized',
+      content: 'Three residents were honored at city hall for their outstanding community service...',
+      date: '2023-10-14',
+    }
   ];
 
-  return <PageLayout title="Local News" articles={articles} category="local" />;
+  return (
+    <PageLayout 
+      title="Local News"
+      articles={articles}
+      category="general"
+    />
+  );
 };
 
 export default Local;
