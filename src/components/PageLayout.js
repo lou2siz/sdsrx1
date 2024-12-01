@@ -25,7 +25,7 @@ const PageLayout = ({ title, articles, category }) => {
               <img src="/logox1.jpg" alt="Logo" style={{ height: 80 }} />
             </Grid>
             <Typography variant="h4" gutterBottom sx={{ 
-              color: 'orange',
+              color: 'gold',
               textShadow: '2px 2px 4px rgba(0,0,0,0.5)',
               textAlign: 'center',
               fontFamily: 'Space Grotesk',

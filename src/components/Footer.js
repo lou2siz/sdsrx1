@@ -35,7 +35,7 @@ const Footer = () => {
             </Typography>
           </Grid>
           <Grid item xs={12} sm={4}>
-            <Typography variant="h6" sx={{ color: 'orange', mb: 2 }}>
+            <Typography variant="h6" sx={{ color: 'gold', mb: 2 }}>
               Follow Us
             </Typography>
             <Link href="https://twitter.com/SFFreedomTimes" target="_blank" sx={{ color: 'lightblue', mr: 2 }}>Twitter</Link>

@@ -41,11 +41,11 @@ const QuickNav = () => {
             label={category.label}
             onClick={() => navigate(category.path)}
             sx={{
-              color: 'red',
-              border: '1px solid red',
+              color: 'light blue',
+              border: '1px solid blue',
               '&:hover': {
-                color: 'orange',
-                border: '1px solid orange',
+                color: 'gold',
+                border: '1px solid gold',
               }
             }}
           />

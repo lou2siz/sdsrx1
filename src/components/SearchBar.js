@@ -58,7 +58,7 @@ const SearchBar = () => {
           sx={{ 
             ml: 1, 
             flex: 1,
-            color: 'red',
+            color: 'light blue',
             '&::placeholder': {
               color: 'red',
               opacity: 0.7
@@ -68,7 +68,7 @@ const SearchBar = () => {
           value={searchTerm}
           onChange={handleSearch}
         />
-        <IconButton sx={{ p: '10px', color: 'red' }}>
+        <IconButton sx={{ p: '10px', color: 'light blue' }}>
           <SearchIcon />
         </IconButton>
       </Paper>
@@ -83,7 +83,7 @@ const SearchBar = () => {
             zIndex: 1000,
             mt: 1,
             bgcolor: 'black',
-            border: '1px solid red',
+            border: '1px solid blue',
             maxHeight: '300px',
             overflow: 'auto'
           }}
@@ -104,12 +104,12 @@ const SearchBar = () => {
                     primary={result.title}
                     secondary={result.date}
                     sx={{
-                      '& .MuiListItemText-primary': { color: 'red' },
-                      '& .MuiListItemText-secondary': { color: 'orange' }
+                      '& .MuiListItemText-primary': { color: 'blue' },
+                      '& .MuiListItemText-secondary': { color: 'gold' }
                     }}
                   />
                 </ListItem>
-                {index < searchResults.length - 1 && <Divider sx={{ bgcolor: 'red' }} />}
+                {index < searchResults.length - 1 && <Divider sx={{ bgcolor: 'blue' }} />}
               </React.Fragment>
             ))}
           </List>
